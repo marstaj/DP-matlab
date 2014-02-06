@@ -1,0 +1,5 @@
+myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,17,47, 1)
+myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,29,7, 1)
+myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,41,39, 1)
+myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,53,7, 1)
+myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 17,2,21, 1)
