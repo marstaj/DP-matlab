@@ -1,4 +1,4 @@
-function myload(folder, year, month, day, hour, minute, second, figure)
+function [ACC, GSM, USER, filename] = myload(folder, year, month, day, hour, minute, second)
 
     year = int2str(year);
     month = int2str(month);
@@ -13,7 +13,7 @@ function myload(folder, year, month, day, hour, minute, second, figure)
     GSMfilename = strcat(filename, '_gsm_log.txt');
     USERfilename = strcat(filename, '_user_log.txt');
     
-    myplot(load(ACCfilename),load(GSMfilename),load(USERfilename), figure);
-    
-    exportToPng(gcf, strcat(filename, '_graph'), 1260, 690);
+    ACC = load(ACCfilename);
+    GSM = load(GSMfilename);
+    USER = load(USERfilename);
 end

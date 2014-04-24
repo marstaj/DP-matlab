@@ -1,5 +1,12 @@
 function plotUSER(USER)
-	D = [ones(size(USER,1),1)*0 ones(size(USER,1),1)*-120];
+    if isempty(USER) == 1
+        return
+    end
+
+    TOP = -25;
+    BOTTOM = -110;
+
+	D = [ones(size(USER,1),1)*TOP ones(size(USER,1),1)*BOTTOM];
     D = reshape(D.',[],1);
 
 	newUSER = [USER(:,2) USER(:,2)];
@@ -8,7 +15,9 @@ function plotUSER(USER)
     mTime = datenum(getMatlabTime(newUSER(:,1)));
     
     hold on
-	stem(mTime,D(:,1),'black');
+	stem_handle = stem(mTime,D(:,1),'black');
+    baseline_handle = get(stem_handle,'BaseLine');
+    set (baseline_handle, 'BaseValue', TOP);
     hold off
     
     labels = cellstr(num2str(USER(:,1)));

@@ -1,35 +1,50 @@
 function myplot(ACC,GSM,USER,figNumber)
 
+    TOP = -25;
+    BOTTOM = -110;
+    TIME_BORDER_OFFSET = 15000; % In miliseconds
+
     % Set and clear figure for drawing
     figure(figNumber);
     clf(figNumber);
     
     % Draw graph
-    plotACC(ACC);
     plotUSER(USER);
+    plotACC(ACC);
     gsmLegend = plotGSM(GSM);
+    
+    % Sliding window
+%     plotAction(ACC);
 
     % Display time on X axis
     datetick('x','HH:MM:SS');
     
-    % Limit X axis and add 15 seconds on each side as graph margin
-    left = datenum(getMatlabTime(GSM(1,6) - 15000));
-    right = datenum(getMatlabTime(GSM(end,6) + 15000));
+    % ----------- Limit axis -----------
+    % Limit X axis and add some time on each side as graph margin
+    left = datenum(getMatlabTime(GSM(1,6) - TIME_BORDER_OFFSET));
+    right = datenum(getMatlabTime(GSM(end,6) + TIME_BORDER_OFFSET));
     xlim([left right]);
-    ylim([-120 0]); % Limit Y axis
+    ylim([BOTTOM TOP]); % Limit Y axis
     
-    % Labels
+    % ----------- Labels -----------
     xlabel('Time');
-    ylabel('Signal strenght (dBm) and accelerometer values (lowered by 30)');
+    ylabel('Signal strenght (dBm) and accelerometer values (lowered by 50)');
     
-    % Legend
-    cellLegend = cell(4 + length(gsmLegend),1);
-    cellLegend{1} = 'Accelerometer X';
-    cellLegend{2} = 'Accelerometer Y';
-    cellLegend{3} = 'Accelerometer Z';
-    cellLegend{4} = 'User action';
+    % ----------- Legend -----------
+    otherLegend = cell(4);
+    otherLegend{1} = 'Zm?na ?seku';
+    otherLegend{2} = 'Akcelerometr - osa X';
+    otherLegend{3} = 'Akcelerometr - osa Y';
+    otherLegend{4} = 'Akcelerometr - osa Z';
+%     cellLegend{5} = 'RMS';
+%     cellLegend{6} = 'ADDITION';
+   
+    cellLegend = cell(length(otherLegend) + length(gsmLegend),1);
+    for i = 1 : length(otherLegend);
+        cellLegend{i} = otherLegend{i};
+    end
     for i = 1 : length(gsmLegend);
-        cellLegend{4 + i} = gsmLegend{i};
+        cellLegend{length(otherLegend) + i} = gsmLegend{i};
     end
     legend(cellLegend, 'Location', 'SouthEast');
     
