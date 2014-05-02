@@ -1,4 +1,5 @@
 function plotAction(ACC)
+%PLOTACTION Plots simple classifier data
     
     DATA = mergeACC(ACC, 'RMS1');
     DATA = removeDuplicates(DATA,2);

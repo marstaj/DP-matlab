@@ -1,4 +1,5 @@
 function myplot(ACC,GSM,USER,figNumber)
+%MYPLOT Plots measured accelerometer, gsm and user data
 
     TOP = -25;
     BOTTOM = -110;
@@ -14,7 +15,7 @@ function myplot(ACC,GSM,USER,figNumber)
     gsmLegend = plotGSM(GSM);
     
     % Sliding window
-%     plotAction(ACC);
+    % plotAction(ACC);
 
     % Display time on X axis
     datetick('x','HH:MM:SS');
@@ -36,8 +37,6 @@ function myplot(ACC,GSM,USER,figNumber)
     otherLegend{2} = 'Akcelerometr - osa X';
     otherLegend{3} = 'Akcelerometr - osa Y';
     otherLegend{4} = 'Akcelerometr - osa Z';
-%     cellLegend{5} = 'RMS';
-%     cellLegend{6} = 'ADDITION';
    
     cellLegend = cell(length(otherLegend) + length(gsmLegend),1);
     for i = 1 : length(otherLegend);

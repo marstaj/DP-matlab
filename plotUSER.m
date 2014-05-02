@@ -1,4 +1,6 @@
 function plotUSER(USER)
+%PLOTUSER Plots user data
+
     if isempty(USER) == 1
         return
     end
@@ -26,11 +28,4 @@ function plotUSER(USER)
     
     text(mTime, D(:,1), labels,'VerticalAlignment','bottom','HorizontalAlignment','right');
     
-end
-
-function getTimeFromMiliseconds(milisec)
-    time_unix = milisec;
-    time_reference = datenum('1970', 'yyyy'); 
-    time_matlab = time_reference + time_unix / 8.64e7;
-    datestr(time_matlab, 'dd.mm.yyyy HH:MM:SS.FFF')
 end

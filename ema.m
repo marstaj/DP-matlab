@@ -1,6 +1,5 @@
 function [ FILTERED ] = ema(UNFILTERED)
-%LOWPASS Summary of this function goes here
-%   Detailed explanation goes here
+%EMA Exponential moving-average filter
 
 l = length(UNFILTERED);
 

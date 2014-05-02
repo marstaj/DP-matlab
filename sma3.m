@@ -1,6 +1,5 @@
 function [ FILTERED ] = sma3(UNFILTERED)
-%LOWPASS Summary of this function goes here
-%   Detailed explanation goes here
+%SMA3 3-point moving average filter
 
 l = length(UNFILTERED);
 

@@ -1,4 +1,6 @@
 function plotACC(ACC)
+%PLOTACC Plots accelerometr data
+
     OFFSET = -50;
     
     DATA = ACC;

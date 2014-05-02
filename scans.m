@@ -1,13 +1,9 @@
-% myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,17,47, 1)
-% myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,29,7, 1)
-% myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,41,39, 1)
-% myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 16,53,7, 1)
-% myload('Predvanocni_NEXUS_Dolu', 2013,12,20, 17,2,21, 1)
+% List of all measured data
 
 % myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 13,36,29, 1)
 % myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 13,48,1, 1)
 % myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 14,0,9, 1)
-myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 14,9,26, 1)
+% myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 14,9,26, 1)
 % myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 14,24,9, 1)
 % myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 14,41,20, 1) % Chuze
 % myplotload('bigscans/GalaxyNexus/dolu', 2014,3,2, 14,50,43, 1) % Chuze

@@ -1,4 +1,5 @@
 function gsmLegend = plotGSM(GSM)
+%PLOTGSM Plots GSM data
 
     GSM = sortrows(GSM,2);
 

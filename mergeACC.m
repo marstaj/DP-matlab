@@ -1,6 +1,5 @@
-function [ RESULT ] = mergeACC( ACC, type );
-%MYFFT Summary of this function goes here
-%   Detailed explanation goes here
+function [ RESULT ] = mergeACC(ACC, type);
+%MERGEACC Merges 3-axis accelerometer data to 1-axis signal
 
     numRows = length(ACC);
     RESULT = zeros(numRows, 2);

@@ -1,3 +1,6 @@
+% Generates training data from one cellphone data for clasification on
+% another cellphone data
+
 clear all
 
 index = 1;
@@ -31,20 +34,14 @@ ACC_SIGNALS{index,1} = ACC; ACC_SIGNALS{index,2} = USER; ACC_SIGNALS{index,3} = 
 
 TRN = 0;
 for i = 1 : length(ACC_SIGNALS)
-    [tempTRN, tempTRN_CLASS, tempTRN_BINAR_CLASS, tempSS, tempSS_CLASS] = getFeaturesListFromSignal(ACC_SIGNALS{i, 1}, ACC_SIGNALS{i, 2}, ACC_SIGNALS{i, 3});
+    [tempTRN, tempTRN_CLASS] = getFeaturesListFromSignal(ACC_SIGNALS{i, 1}, ACC_SIGNALS{i, 2}, ACC_SIGNALS{i, 3});
     
     if TRN == 0
         TRN = tempTRN;
         TRN_CLASS = tempTRN_CLASS;
-        TRN_BINAR_CLASS = tempTRN_BINAR_CLASS;
-        SS = tempSS;
-        SS_CLASS = tempSS_CLASS;
     else
         TRN = vertcat(TRN, tempTRN);
         TRN_CLASS = vertcat(TRN_CLASS, tempTRN_CLASS);
-        TRN_BINAR_CLASS = vertcat(TRN_BINAR_CLASS, tempTRN_BINAR_CLASS);
-        SS = vertcat(SS, tempSS);
-        SS_CLASS = vertcat(SS_CLASS, tempSS_CLASS);
     end
     
 end
@@ -84,20 +81,14 @@ ACC_SIGNALS{index,1} = ACC; ACC_SIGNALS{index,2} = USER; ACC_SIGNALS{index,3} = 
 
 TRN = 0;
 for i = 1 : length(ACC_SIGNALS)
-    [tempTRN, tempTRN_CLASS, tempTRN_BINAR_CLASS, tempSS, tempSS_CLASS] = getFeaturesListFromSignal(ACC_SIGNALS{i, 1}, ACC_SIGNALS{i, 2}, ACC_SIGNALS{i, 3});
+    [tempTRN, tempTRN_CLASS] = getFeaturesListFromSignal(ACC_SIGNALS{i, 1}, ACC_SIGNALS{i, 2}, ACC_SIGNALS{i, 3});
     
     if TRN == 0
         TRN = tempTRN;
         TRN_CLASS = tempTRN_CLASS;
-        TRN_BINAR_CLASS = tempTRN_BINAR_CLASS;
-        SS = tempSS;
-        SS_CLASS = tempSS_CLASS;
     else
         TRN = vertcat(TRN, tempTRN);
         TRN_CLASS = vertcat(TRN_CLASS, tempTRN_CLASS);
-        TRN_BINAR_CLASS = vertcat(TRN_BINAR_CLASS, tempTRN_BINAR_CLASS);
-        SS = vertcat(SS, tempSS);
-        SS_CLASS = vertcat(SS_CLASS, tempSS_CLASS);
     end
     
 end

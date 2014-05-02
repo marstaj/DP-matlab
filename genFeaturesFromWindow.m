@@ -1,6 +1,5 @@
 function [RESULT] = genFeaturesFromWindow(WINDOW)
-%GENFEATURES Summary of this function goes here
-%   Detailed explanation goes here
+%GENFEATURESFROMWINDOW Analyzes window and generates training features
 
     [m,n] = size(WINDOW);
     
@@ -27,7 +26,7 @@ function [RESULT] = genFeaturesFromWindow(WINDOW)
     MAXFFT = max(Y(1:fix(length(Y)/2)));
     
     RESULT = [MAXFFT, MAX, MIN, MEAN, MEDIAN, KURTOSIS, SKEWNESS, STD, RMS, VARIANCE, RANGE, IQR];
-%       RESULT = [MAXFFT, MAX, MIN, MEAN, RMS, STD, KURTOSIS, SKEWNESS, VARIANCE, RANGE, IQR];
+%     RESULT = [MAXFFT, MAX, MIN, MEAN, RMS, STD, KURTOSIS, SKEWNESS, VARIANCE, RANGE, IQR];
 %     RESULT = [MAXFFT, MAX, MIN, MEAN, KURTOSIS, SKEWNESS, STD, RMS, VARIANCE, RANGE, IQR];
 %     RESULT = [MAXFFT, MAX, MIN, STD, RMS, VARIANCE, RANGE, IQR];
 %     RESULT = [MAXFFT, MAX, MIN];

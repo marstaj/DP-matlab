@@ -1,9 +1,8 @@
+% Generates training data
+
 clear all
 
 index = 1;
-
-% [ACC, GSM, USER, filename] = myload('test', 2014,3,17,13,33,40);
-% ACC_SIGNALS{index,1} = ACC; ACC_SIGNALS{index,2} = USER; ACC_SIGNALS{index,3} = GSM; index = index + 1;
 
 [ACC, GSM, USER, filename] = myload('bigscans/GalaxyNexus/dolu', 2014,3,2, 13,36,29);
 ACC_SIGNALS{index,1} = ACC; ACC_SIGNALS{index,2} = USER; ACC_SIGNALS{index,3} = GSM; index = index + 1;
@@ -115,26 +114,20 @@ ACC_SIGNALS{index,1} = ACC; ACC_SIGNALS{index,2} = USER; ACC_SIGNALS{index,3} = 
 
 TRN = 0;
 for i = 1 : length(ACC_SIGNALS)
-    [tempTRN, tempTRN_CLASS, tempTRN_BINAR_CLASS, tempSS, tempSS_CLASS] = getFeaturesListFromSignal(ACC_SIGNALS{i, 1}, ACC_SIGNALS{i, 2}, ACC_SIGNALS{i, 3});
+    [tempTRN, tempTRN_CLASS] = getFeaturesListFromSignal(ACC_SIGNALS{i, 1}, ACC_SIGNALS{i, 2}, ACC_SIGNALS{i, 3});
     
     if TRN == 0
         TRN = tempTRN;
         TRN_CLASS = tempTRN_CLASS;
-%         TRN_BINAR_CLASS = tempTRN_BINAR_CLASS;
-%         SS = tempSS;
-%         SS_CLASS = tempSS_CLASS;
     else
         TRN = vertcat(TRN, tempTRN);
         TRN_CLASS = vertcat(TRN_CLASS, tempTRN_CLASS);
-%         TRN_BINAR_CLASS = vertcat(TRN_BINAR_CLASS, tempTRN_BINAR_CLASS);
-%         SS = vertcat(SS, tempSS);
-%         SS_CLASS = vertcat(SS_CLASS, tempSS_CLASS);
     end
     
 end
 
 % Save features
-% SAVE = [TRN, TRN_CLASS];
-% dlmwrite('train_in_out.txt', SAVE);
-% dlmwrite('train_in.txt', TRN);
-% dlmwrite('train_out.txt', TRN_CLASS);
+SAVE = [TRN, TRN_CLASS];
+dlmwrite('train_in_out.txt', SAVE);
+dlmwrite('train_in.txt', TRN);
+dlmwrite('train_out.txt', TRN_CLASS);

@@ -1,6 +1,5 @@
 function [ FILTERED ] = sma5(UNFILTERED)
-%LOWPASS Summary of this function goes here
-%   Detailed explanation goes here
+%SMA5 5-point moving average filter
 
 l = length(UNFILTERED);
 

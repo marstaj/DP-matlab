@@ -1,4 +1,5 @@
 function name = nameOfBTS(btsNumber)
+%NAMEOFBTS Finds name of this BTS in eurotel.xcv or etumts.csv file
 
     fid = fopen('eurotel.csv', 'rt');
     btsNames = textscan(fid, '%d %d %s', 'CollectOutput', true, 'Delimiter', ';');

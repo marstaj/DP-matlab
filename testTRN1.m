@@ -1,3 +1,5 @@
+% Test neural network from TRN data with irregular rounding
+
 outputs = sim(net,TRN.');
 outputs = outputs.';
 s = size(outputs);

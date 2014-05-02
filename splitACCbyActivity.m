@@ -1,6 +1,5 @@
 function [ RESULT ] = splitACCbyActivity( ACC, USER, timeColumn )
-%SPLITACCBYACTION Summary of this function goes here
-%   Detailed explanation goes here
+%SPLITACCBYACTIVITY Splits ACC data to windows and labels it by activity
 
 userLenght = length(USER);
 userIndex = 1;

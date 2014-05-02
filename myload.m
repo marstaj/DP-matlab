@@ -1,4 +1,5 @@
 function [ACC, GSM, USER, filename] = myload(folder, year, month, day, hour, minute, second)
+%MYLOAD Loads measured accelerometer, gsm and user data from file
 
     year = int2str(year);
     month = int2str(month);
